@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Yii console bootstrap file.
+ */
+    require __DIR__ . '/vendor/autoload.php';
+
+    require __DIR__ . '/src/config/env.php';
+
+    require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
+
+    $config = require __DIR__ . '/src/config/console.php';
+
+    $app   = new yii\console\Application($config);
+
+    $app->run();

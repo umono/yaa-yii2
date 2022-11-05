@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./index.435adb25.js";import"./lodash.f4bc9830.js";const r={setup(){return{}}};function n(s,c,a,p,_,u){return t(),o("div",null," Test! ")}const i=e(r,[["render",n]]);export{i as default};

@@ -1,0 +1,160 @@
+{
+  "index.html": {
+    "file": "assets/index.b7f5a5ed.js",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_.pnpm.dd1a9690.js"
+    ],
+    "dynamicImports": [
+      "src/views/test/Index.vue",
+      "src/views/Admin/admin-group/Index.vue",
+      "src/views/Admin/admin-log/Index.vue",
+      "src/views/Admin/admin/Index.vue",
+      "src/views/Admin/home/Index.vue",
+      "src/views/Admin/login/Index.vue",
+      "src/views/Admin/menu/Index.vue",
+      "src/views/Admin/template/Index.vue",
+      "src/views/Admin/user/Index.vue"
+    ],
+    "css": [
+      "assets/index.a0c4b17e.css"
+    ]
+  },
+  "_.pnpm.dd1a9690.js": {
+    "file": "js/.pnpm/.pnpm.dd1a9690.js"
+  },
+  "src/views/Admin/login/Index.vue": {
+    "file": "js/login/Index.e6e00d25.js",
+    "src": "src/views/Admin/login/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/Index.ef08db21.css"
+    ]
+  },
+  "src/views/test/Index.vue": {
+    "file": "js/test/Index.70ac5a9c.js",
+    "src": "src/views/test/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_.pnpm.dd1a9690.js"
+    ]
+  },
+  "src/views/Admin/admin-group/Index.vue": {
+    "file": "js/admin-group/Index.db2a3ccb.js",
+    "src": "src/views/Admin/admin-group/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/Index.69d7d3f6.css"
+    ]
+  },
+  "_TableData.6533d4d6.js": {
+    "file": "js/TableData/TableData.6533d4d6.js",
+    "imports": [
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/TableData.1ea37d48.css"
+    ]
+  },
+  "src/views/Admin/admin-log/Index.vue": {
+    "file": "js/admin-log/Index.9312c139.js",
+    "src": "src/views/Admin/admin-log/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/Index.1c1841a8.css"
+    ]
+  },
+  "src/views/Admin/admin/Index.vue": {
+    "file": "js/admin/Index.d73a280b.js",
+    "src": "src/views/Admin/admin/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "index.html",
+      "_.pnpm.dd1a9690.js"
+    ]
+  },
+  "src/views/Admin/home/Index.vue": {
+    "file": "js/home/Index.2fe5c943.js",
+    "src": "src/views/Admin/home/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/Index.070dc35b.css"
+    ]
+  },
+  "src/views/Admin/menu/Index.vue": {
+    "file": "js/menu/Index.52f81388.js",
+    "src": "src/views/Admin/menu/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ]
+  },
+  "src/views/Admin/template/Index.vue": {
+    "file": "js/template/Index.bd366c29.js",
+    "src": "src/views/Admin/template/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ]
+  },
+  "src/views/Admin/user/Index.vue": {
+    "file": "js/user/Index.4f9b65cc.js",
+    "src": "src/views/Admin/user/Index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TableData.6533d4d6.js",
+      "_.pnpm.dd1a9690.js",
+      "index.html"
+    ]
+  },
+  "TableData.css": {
+    "file": "assets/TableData.1ea37d48.css",
+    "src": "TableData.css"
+  },
+  "src/views/Admin/admin-log/Index.css": {
+    "file": "assets/Index.1c1841a8.css",
+    "src": "src/views/Admin/admin-log/Index.css"
+  },
+  "src/views/Admin/login/Index.css": {
+    "file": "assets/Index.ef08db21.css",
+    "src": "src/views/Admin/login/Index.css"
+  },
+  "src/views/Admin/home/Index.css": {
+    "file": "assets/Index.070dc35b.css",
+    "src": "src/views/Admin/home/Index.css"
+  },
+  "src/views/Admin/admin-group/Index.css": {
+    "file": "assets/Index.69d7d3f6.css",
+    "src": "src/views/Admin/admin-group/Index.css"
+  },
+  "index.css": {
+    "file": "assets/index.a0c4b17e.css",
+    "src": "index.css"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "umono/yaa-yii2",
+  "type": "project",
+  "description":"A background management system based on vue3+vite3+yii2. 一个基于Vue3 yii2 的后台框架，可快速助你开发。",
+  "autoload": {
+    "psr-4": {
+      "app\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "umono",
+      "email": "umono.life@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.3.0",
+    "yiisoft/yii2": "~2.0.45",
+    "yiisoft/yii2-bootstrap": "~2.0.11",
+    "yiisoft/yii2-swiftmailer": "~2.1.3",
+    "vlucas/phpdotenv": "^5.5",
+    "yiisoft/yii2-redis": "2.0.18",
+    "ext-json": "*",
+    "twbs/bootstrap": "^5.2",
+    "ext-gd": "*",
+    "yiisoft/yii2-imagine": "^2.3",
+    "ext-openssl": "*",
+    "pimple/pimple": "^3.5",
+    "openspout/openspout": "3.7.4",
+    "ext-zip": "*",
+    "phpoffice/phpspreadsheet": "^1.25",
+    "gregwar/captcha": "^1.1",
+    "umono/yii2-multiple": "^0.1.0"
+  },
+  "provide": {
+    "bower-asset/jquery": "*",
+    "bower-asset/bootstrap": "*",
+    "bower-asset/inputmask": "*",
+    "bower-asset/punycode": "*",
+    "bower-asset/typeahead.js": "*",
+    "bower-asset/yii2-pjax": "*",
+    "bower-asset/swagger-ui": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "^2.1",
+    "yiisoft/yii2-gii": "^2.2",
+    "yiisoft/yii2-faker": "^2.0",
+    "swagger-api/swagger-ui": "^4.15",
+    "twbs/bootstrap": "^5.2",
+    "light/yii2-swagger": "^3.0"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-install-cmd": [
+      "@php yii init"
+    ]
+  }
+}
