@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e259536e0d88ef4ae07a5902a71e84d1",
+    "content-hash": "f328720a555a12af214b9c69cd129b4a",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2175,12 +2175,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/multiple-tools/yii2-multiple.git",
-                "reference": "2a9f0890e3f8cdec4474f1a88e6b9ba2a7975a71"
+                "reference": "40cfd0ea15cd0a906446bda2f87d07a8e4a3cb34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/multiple-tools/yii2-multiple/zipball/2a9f0890e3f8cdec4474f1a88e6b9ba2a7975a71",
-                "reference": "2a9f0890e3f8cdec4474f1a88e6b9ba2a7975a71",
+                "url": "https://api.github.com/repos/multiple-tools/yii2-multiple/zipball/40cfd0ea15cd0a906446bda2f87d07a8e4a3cb34",
+                "reference": "40cfd0ea15cd0a906446bda2f87d07a8e4a3cb34",
                 "shasum": ""
             },
             "require": {
@@ -2222,7 +2222,7 @@
                 "issues": "https://github.com/multiple-tools/yii2-multiple/issues",
                 "source": "https://github.com/multiple-tools/yii2-multiple/tree/0.1"
             },
-            "time": "2022-11-05T08:47:15+00:00"
+            "time": "2022-11-05T10:51:32+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
