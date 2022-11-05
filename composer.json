@@ -1,7 +1,9 @@
 {
   "name": "umono/yaa-yii2",
   "type": "project",
-  "description":"A background management system based on vue3+vite3+yii2. 一个基于Vue3 yii2 的后台框架，可快速助你开发。",
+  "description":"一个基于Vue3 yii2 的后台框架，可快速助你开发。",
+  "keywords": ["yii2","vue3","naive-ui"],
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "app\\": "src"
