@@ -41,3 +41,4 @@ vendor/
 .phpunit*
 *.cache
 extend/
+stats.html
