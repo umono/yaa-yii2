@@ -5,5 +5,7 @@
 ## 使用
 
 ```shell
-composer create-project umono/yaa-yii2
+composer create-project umono/yaa-yii2 
+
+cd yaa-yii2 && php yii init
 ```
