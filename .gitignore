@@ -9,6 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
+extend
+umono
 dist-ssr
 *.local
 
@@ -25,6 +27,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+*.lock
 
 
 .buildpath
@@ -40,5 +43,5 @@ vendor/
 .DS_Store
 .phpunit*
 *.cache
-extend/
+
 stats.html
