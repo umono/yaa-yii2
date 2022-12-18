@@ -1,6 +1,6 @@
 <template>
     <div class="ticker-column-container">
-        <div class="ticker-column " :style="`transform: translateY(${number}px) translateZ(00px);`">
+        <div class="ticker-column" :style="`transform: translateY(${number}px) translateZ(00px);`">
             <div class="ticker-digit"><span>9</span></div>
             <div class="ticker-digit"><span>8</span></div>
             <div class="ticker-digit"><span>7</span></div>
@@ -29,9 +29,6 @@ export default defineComponent({
         let setInterVal1: any = null;
         let setInterVal2: any = null;
 
-        watch(() => props.number, (n) => {
-            go(n);
-        });
 
         const go = throttle(async (n) => {
             const tfNumber = n * 40;
@@ -54,6 +51,13 @@ export default defineComponent({
             leading: true,
             trailing: false
         })
+
+        if (props.number) {
+            go(props.number);
+        }
+
+        watch(() => props.number, go);
+
         onUnmounted(() => {
             go.cancel();
             clearInterval(setInterVal1);
@@ -83,9 +87,8 @@ export default defineComponent({
 }
 
 .ticker-column {
-    -webkit-animation: pulseGreen 0.5s cubic-bezier(0.4, 0, 0.6, 1) 1;
-    animation: pulseGreen 0.5s cubic-bezier(0.4, 0, 0.6, 1) 1;
-
+    // -webkit-animation: pulseGreen 0.5s cubic-bezier(0.4, 0, 0.6, 1) 1;
+    // animation: pulseGreen 0.5s cubic-bezier(0.4, 0, 0.6, 1) 1;
 }
 
 .number-placeholder {
@@ -93,29 +96,29 @@ export default defineComponent({
 }
 
 
-@-webkit-keyframes pulseGreen {
+// @-webkit-keyframes pulseGreen {
 
-    0%,
-    to {
-        color: #fff;
-    }
+//     0%,
+//     to {
+//         color: #fff;
+//     }
 
-    50% {
-        --tw-text-opacity: 1;
-        color: rgba(163, 163, 163);
-    }
-}
+//     50% {
+//         --tw-text-opacity: 1;
+//         color: rgba(163, 163, 163);
+//     }
+// }
 
-@keyframes pulseGreen {
+// @keyframes pulseGreen {
 
-    0%,
-    to {
-        color: #fff;
-    }
+//     0%,
+//     to {
+//         color: #fff;
+//     }
 
-    50% {
-        --tw-text-opacity: 1;
-        color: rgba(163, 163, 163);
-    }
-}
+//     50% {
+//         --tw-text-opacity: 1;
+//         color: rgba(163, 163, 163);
+//     }
+// }
 </style>

@@ -1,14 +1,12 @@
 <template>
     <div class="jump-number-box">
-        <h1>
-            <span class="font-200 inline-block ">
-                <div class="ticker-view" style="transform: none; transform-origin: 50% 50% 0px;">
-                    <numberJump v-for="(item, key) in 10" v-model:number="numberValue[key]" :index="key"
-                        :class="'sort-' + key">
-                    </numberJump>
-                </div>
-            </span>
-        </h1>
+        <span class="inline-block ">
+            <div class="ticker-view" style="transform: none; transform-origin: 50% 50% 0px;">
+                <numberJump v-for="(item, key) in 10" v-model:number="numberValue[key]" :index="key"
+                    :class="'sort-' + key">
+                </numberJump>
+            </div>
+        </span>
     </div>
 
 </template>
@@ -21,31 +19,33 @@ export default defineComponent({
     components: { numberJump },
     setup(props) {
         let numberValue: any = ref([0]);
-        watch(() => props.number, (n) => {
+        const initNumberValue = (n: any) => {
             const _n = n.toString();
             const arr = [];
             for (let index = 0; index < _n.length; index++) {
                 arr.push(_n[index])
             }
             numberValue.value = arr;
-        })
+        }
+        if (props.number) {
+            initNumberValue(props.number);
+        }
+
+        watch(() => props.number, initNumberValue)
 
         return {
             numberValue,
+            initNumberValue
         }
     }
 })
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.jump-number-box{
     line-height: 2.5rem;
+    overflow: hidden;
 }
-
-.font-200 {
-    font-weight: 200;
-}
-
 .inline-block {
     display: inline-block;
 }
@@ -57,6 +57,5 @@ h1 {
     // flex-direction: row-reverse;
     overflow: hidden;
     position: relative;
-
 }
 </style>
