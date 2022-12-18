@@ -25,7 +25,6 @@ const routes: any[] = [
     {
         path: '',
         redirect: '/admin/home'
-        // component: ()=>import('@/views/Admin/home/Index.vue')
     },
 ]
 

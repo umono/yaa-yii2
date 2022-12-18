@@ -1,10 +1,10 @@
 import { defineComponent, reactive } from "vue";
 
-type SizeTyp =  'tiny' | 'small' | 'medium' | 'large';
+type SizeType =  'tiny' | 'small' | 'medium' | 'large';
 type BtnTypeStr = 'default' | 'tertiary' | 'primary' | 'info' | 'success' | 'warning' | 'error';
 
 interface BtnType {
-  size?: SizeTyp | string,
+  size?: SizeType | string,
   emitFunction: string,
   text: string | Function | any,
   type?:BtnTypeStr| string

@@ -1,6 +1,13 @@
 # yaa-yii2
  一个基于Vue3、Yii2的后台框架，可快速助你CURD开发。
 
+## 环境要求
+
+ - PHP >= 7.3
+ - Composer >= 2
+ - Node.js >= 14
+
+
 ## 安装
 
 ```shell
@@ -13,33 +20,6 @@ cd yaa-yii2 && php yii init
 ## 使用示例
 
 基本使用，呈现数据表格（以用户表）为例：
-
-### php 文件
-```php
-<?php
-    namespace app\modules\backend\api\controllers;
-
-    use app\modules\backend\api\Controller;
-    use app\modules\backend\api\models\other\User;
-
-    class UserController extends Controller
-    {
-        // 数据列表
-        public function actionIndex()
-        {
-            $get      = $this->get;
-            $andWhere = [
-                ['like', 'nickName', $get['nickName'] ?? ''],
-                ['like', 'name', $get['name'] ?? ''],
-                ['like', 'phone', $get['phone'] ?? ''],
-            ];
-            return User::page()->andWhere($andWhere)->toTableDataArray();
-        }
-
-        // 创建、修改、删除
-        // ...
-    }
-```
 
 ### vue 文件
 ```vue
@@ -77,6 +57,39 @@ export default defineComponent({
 })
 </script>
 ```
+
+
+### php 文件
+```php
+<?php
+    namespace app\modules\backend\api\controllers;
+
+    use app\modules\backend\api\Controller;
+    use app\modules\backend\api\models\other\User;
+
+    class UserController extends Controller
+    {
+        // 数据列表
+        public function actionIndex()
+        {
+            $get      = $this->get;
+            $andWhere = [
+                ['like', 'nickName', $get['nickName'] ?? ''],
+                ['like', 'name', $get['name'] ?? ''],
+                ['like', 'phone', $get['phone'] ?? ''],
+            ];
+            return User::page()->andWhere($andWhere)->toTableDataArray();
+        }
+
+        // 创建、修改、删除
+        // ...
+    }
+```
+
+效果图如下：
+
+![用户表界面](https://crustipfs.art/ipfs/QmYZwtxKxx72cWGhWVkYsAojjgw1xGpJbsQqmr6iNh2pva?filename=1671367264971.jpg)
+
 
 ## 文档
 
