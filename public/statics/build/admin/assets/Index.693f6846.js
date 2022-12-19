@@ -1,1 +1,0 @@
-import{d as e,_ as n,c as t,o}from"./index.435adb25.js";import"./lodash.f4bc9830.js";const r=e({name:"HOME",setup(){return{}}});function s(c,a,p,_,d,i){return o(),t("div",null," Hi,Ok ")}const u=n(r,[["render",s]]);export{u as default};

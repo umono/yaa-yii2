@@ -1,1 +1,0 @@
-import{_ as s}from"../../assets/index.332e1771.js";import{o as e,i as t}from"../.pnpm/.pnpm.f37eb169.js";const n=s({setup:()=>({})},[["render",function(s,n,r,o,p,a){return e(),t("div",null," Test! ")}]]);export{n as default};
