@@ -8,12 +8,13 @@
 
 
 # 示例图
-<img src="https://crustipfs.info/ipfs/QmPhLwQvHijHMCrSvmHoPXcJAPwhrGUgKgmBGRDR8tcD11?filename=1671439195591.jpg" width="32%"/>
-<img src="https://crustipfs.live/ipfs/Qme5vqMHFrLAxbQKwz2bRKMBDPNq32izpGymF8U9N8u8Tk?filename=home.jpg" width="32%"/>
-<img src="https://crustipfs.live/ipfs/QmQVeyZAuGufD32Pi1st7YnwVxYJD7etX1xoRkvRVoUgyD?filename=1671439128626.jpg" width="32%"/>
-
-<img src="https://crustipfs.info/ipfs/QmQPr81Uxxq9x74kpdqdAy7CWp3eRV2Q73VpGr4v7dUmk5?filename=1671439104910.jpg" width="33%"/>
-<img src="https://crustipfs.art/ipfs/QmbMc2ydBWRthviTMNfa5McBhjotDuHgHzpUKdT19kFt6E?filename=1671439154772.jpg" width="32%"/>
+<div style="flex;justify-content: center;">
+<img src="https://crustipfs.info/ipfs/QmPhLwQvHijHMCrSvmHoPXcJAPwhrGUgKgmBGRDR8tcD11?filename=1671439195591.jpg" width="30%"/>
+<img src="https://crustipfs.live/ipfs/Qme5vqMHFrLAxbQKwz2bRKMBDPNq32izpGymF8U9N8u8Tk?filename=home.jpg" width="30%"/>
+<img src="https://crustipfs.live/ipfs/QmQVeyZAuGufD32Pi1st7YnwVxYJD7etX1xoRkvRVoUgyD?filename=1671439128626.jpg" width="30%"/>
+<img src="https://crustipfs.info/ipfs/QmQPr81Uxxq9x74kpdqdAy7CWp3eRV2Q73VpGr4v7dUmk5?filename=1671439104910.jpg" width="30%"/>
+<img src="https://crustipfs.art/ipfs/QmbMc2ydBWRthviTMNfa5McBhjotDuHgHzpUKdT19kFt6E?filename=1671439154772.jpg" width="30%"/>
+</div
 
 # 环境要求
 
