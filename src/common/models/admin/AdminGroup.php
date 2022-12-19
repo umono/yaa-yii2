@@ -18,6 +18,10 @@
         public $isSaveLog = false;
         public const PERMISSIONS_CACHE_PREFIX = 'ADMIN_GROUP_PERMISSIONS_';
         public $permissions;
+        public function behaviors()
+        {
+            return [];
+        }
 
         public static function tableName()
         {

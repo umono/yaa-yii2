@@ -100,7 +100,7 @@
             $this->createIndex('sort', $this->adminMenuTableName, 'sort');
 
             // 写入数据
-            $this->batchInsert($this->adminGroupTableName, ['name'], [['开发部']]);
+            //$this->batchInsert($this->adminGroupTableName, ['name'], [['开发部']]);
 
             $this->batchInsert(
                 $this->adminTableName, [
@@ -124,11 +124,19 @@
                 ]);
 
             // 导入菜单数据
+            $menuArr = MenuDataHelper::backAll();
             $this->batchInsert(
                 $this->adminMenuTableName,
                 MenuDataHelper::getColumnArr(),
-                MenuDataHelper::backAll()
+                $menuArr,
             );
+
+            $menuKeys = array_slice(array_column($menuArr,4),3);
+            $adminGroup              = new \app\common\models\admin\AdminGroup();
+            $adminGroup->name        = '开发部';
+            $adminGroup->permissions = $menuKeys;
+
+            $adminGroup->save(false);
         }
 
         /**

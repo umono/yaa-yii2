@@ -19,7 +19,7 @@
                                             <div class="label">
                                                 {{ item.name }}
                                                 <span
-                                                    :class="item.own == item.sumRole ? 'bg-green-500 text-white' : 'bg-stone-100'">
+                                                    :class="item.sumRole != 0 && item.own == item.sumRole ? 'bg-green-500 text-white' : 'bg-stone-100'">
                                                     {{ item.own }}/{{ item.sumRole }}
                                                 </span>
                                             </div>

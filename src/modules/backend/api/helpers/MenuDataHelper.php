@@ -60,7 +60,7 @@
                 [27, '菜单数据导出全部', 2, '导出全部数据', 'menu/export-all', 8, null, null, 1, $time, $time],
 
                 [28, '用户管理', 0, null, 'user', 0, 6, 'People24Filled', 1, $time, $time],
-                [29, '用户列表', 1, '用户列表数据', 'user/index', 17, 0, null, 1, $time, $time],
+                [29, '用户列表', 1, '用户列表数据', 'user/index', 28, 0, null, 1, $time, $time],
             ];
         }
     }
