@@ -1,14 +1,36 @@
-# yaa-yii2
- 一个基于Vue3、Yii2的后台框架，可快速助你CURD开发。
+<div align="center">
+ 一个基于Vue3、Yii2的干净美观的后台框架，可快速助你CURD开发。
+<p align="center">
+  <a href="http://yaa.speaks.life/">演示</a> •
+  <a href="http://yaa.docs.speaks.life/">文档</a>
+</p>
+</div>
 
-## 环境要求
+
+# 示例图
+<img src="https://crustipfs.info/ipfs/QmPhLwQvHijHMCrSvmHoPXcJAPwhrGUgKgmBGRDR8tcD11?filename=1671439195591.jpg" width="32%"/>
+<img src="https://crustipfs.live/ipfs/Qme5vqMHFrLAxbQKwz2bRKMBDPNq32izpGymF8U9N8u8Tk?filename=home.jpg" width="32%"/>
+<img src="https://crustipfs.live/ipfs/QmQVeyZAuGufD32Pi1st7YnwVxYJD7etX1xoRkvRVoUgyD?filename=1671439128626.jpg" width="32%"/>
+
+<img src="https://crustipfs.info/ipfs/QmQPr81Uxxq9x74kpdqdAy7CWp3eRV2Q73VpGr4v7dUmk5?filename=1671439104910.jpg" width="33%"/>
+<img src="https://crustipfs.art/ipfs/QmbMc2ydBWRthviTMNfa5McBhjotDuHgHzpUKdT19kFt6E?filename=1671439154772.jpg" width="32%"/>
+
+# 环境要求
 
  - PHP >= 7.3
  - Composer >= 2
  - Node.js >= 14
 
+# ✨ 特性
 
-## 安装
+- 🎊 界面清爽、简约
+- ⚒️ 原生框架轻度改造、不附带任何臃肿第三方库
+- ✨ 自带祝福光环加持，助你效率提升1000X
+
+
+
+
+# 📦  安装
 
 ```shell
 composer create-project umono/yaa-yii2 
@@ -17,9 +39,9 @@ cd yaa-yii2 && php yii init
 ```
 
 
-## 使用示例
+# 🔨 快速上手
 
-基本使用，呈现数据表格（以用户表）为例：
+呈现数据表格（以用户表）为例：
 
 ### vue 文件
 ```vue
@@ -86,10 +108,10 @@ export default defineComponent({
     }
 ```
 
-效果图如下：
+# 🤝 建议
 
-![用户表界面](https://crustipfs.art/ipfs/QmYZwtxKxx72cWGhWVkYsAojjgw1xGpJbsQqmr6iNh2pva?filename=1671367264971.jpg)
+如果您在使用的过程中碰到问题，可以先通过 [issues](https://github.com/umono/yaa-yii2/issues/new) 看看有没有类似的 bug 或者建议。
 
+# License
 
-## 文档
-
+MIT
