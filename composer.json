@@ -6,7 +6,7 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "app\\": "src",
+      "app\\": "src"
     }
   },
   "authors": [
@@ -31,7 +31,8 @@
     "openspout/openspout": "3.7.4",
     "ext-zip": "*",
     "phpoffice/phpspreadsheet": "^1.25",
-    "gregwar/captcha": "^1.1"
+    "gregwar/captcha": "^1.1",
+    "umono/yii2-multiple": "^0.1.1"
   },
   "provide": {
     "bower-asset/jquery": "*",
