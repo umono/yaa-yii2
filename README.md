@@ -1,5 +1,8 @@
 <div align="center">
+    <div style="font-size:42px;">🤞 Yaa </div> 
+
  一个基于Vue3、Yii2的干净美观的后台框架，可快速助你CURD开发。
+ 
 <p align="center">
   <a href="http://yaa.speaks.life/">演示</a> •
   <a href="http://yaa.docs.speaks.life/">文档</a>
