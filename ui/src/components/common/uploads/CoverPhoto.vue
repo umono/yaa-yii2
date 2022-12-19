@@ -41,7 +41,7 @@ export default defineComponent({
         }
         return {
             fileName,
-            url: import.meta.env.APP_URL + 'admin/api/upload/photo',
+            url: Auth.getApiUrl() + 'admin/api/upload/photo',
             headers,
             handleFinish,
         }
