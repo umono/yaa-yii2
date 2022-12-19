@@ -3,7 +3,18 @@ const clientIdItemKey = 'client-id'
 const accessTokenItemKey = 'ACCESS_TOKEN'
 
 
-const auth  = {
+const auth = {
+    getApiUrl() {
+        let HTTP_URL = ''
+        if (process.env.NODE_ENV !== 'production') {
+            HTTP_URL = import.meta.env.APP_URL;
+        } else {
+            const host: any = document.querySelector('meta[name="host"]')
+            HTTP_URL = host.getAttribute('content');
+        }
+        return HTTP_URL
+    },
+
     getClientId() {
         return window.localStorage.getItem(clientIdItemKey)
     },
@@ -15,7 +26,7 @@ const auth  = {
     getAccessToken() {
         return window.localStorage.getItem(accessTokenItemKey)
     },
-    
+
     resetToken() {
         const token = window.localStorage.getItem(accessTokenItemKey);
         if (token) {
@@ -36,7 +47,7 @@ const auth  = {
             window.localStorage.setItem(accessTokenItemKey, accessToken)
         }
     },
-} 
+}
 
 export default auth;
 

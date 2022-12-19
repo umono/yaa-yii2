@@ -11,7 +11,7 @@ const HttpCodes = {
 }
 
 export default new Request({
-    baseUrl: import.meta.env.APP_URL,
+    baseUrl: Auth.getApiUrl(),
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Accept': 'application/json'
