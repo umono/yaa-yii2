@@ -118,7 +118,7 @@
                 $this->identity = Admin::findOne(['email' => $account]);
             }
 
-            if (StringHelper::isPhoneNumber($account) || $account == '9527') {
+            if (StringHelper::isPhoneNumber($account) || $account == $_ENV['SUPER_ADMIN_ACCOUNT']) {
                 $this->accountType = static::ACCOUNT_TYPE_PHONE;
                 $this->identity    = Admin::findOne(['phone' => $account]);
             }
