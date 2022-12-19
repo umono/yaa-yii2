@@ -20,9 +20,10 @@
         'bootstrap' => \app\modules\ModulesConfig::bootstrap(),
 
         'aliases' => [
-            '@base'    => dirname(__DIR__) . '/../',
-            '@app'     => dirname(__DIR__) . '/',
-            '@app/web' => __DIR__ . '/../../public',
+            '@base'           => dirname(__DIR__) . '/../',
+            '@app'            => dirname(__DIR__) . '/',
+            '@app/web'        => __DIR__ . '/../../public',
+            '@app/migrations' => __DIR__ . '/../database/migrations',
         ],
 
         "modules" => \app\modules\ModulesConfig::modules(),

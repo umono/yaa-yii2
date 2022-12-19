@@ -87,11 +87,12 @@
         public static function updatePassword($param)
         {
             $model = Admin::findOne(['id' => $param['id'] ?? -1]);
-
-            if (empty($model)) {
-                $model->password = $param['password'];
-                $model->setPassword();
-                $model->save();
+            if (!empty($model)) {
+                if (!empty($param['password'])){
+                    $model->password = $param['password'];
+                    $model->passwordConfirm = true;
+                    $model->save();
+                }
                 unset($model);
             }
 

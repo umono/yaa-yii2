@@ -6,7 +6,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "app\\": "src"
+      "app\\": "src",
+      "umono\\multiple\\": "extend/yii2-multiple/src"
     }
   },
   "authors": [

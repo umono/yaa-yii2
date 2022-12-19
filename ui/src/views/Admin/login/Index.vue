@@ -103,8 +103,6 @@ export default defineComponent({
                     window.$message.error(data.errMsg);
                     this.captchaImg = data.captchaImg;
                     this.captchaCode = '';
-                    
-                    console.log("????",this.loginForm);
                 }
             }
             this.loading = false;

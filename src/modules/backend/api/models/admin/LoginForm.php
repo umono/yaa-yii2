@@ -152,12 +152,11 @@
                 $captchaArr = $this->getCaptchaArr($retryKey);
 
                 if ($this->captchaCode && !empty($captchaArr['code'] ?? '')) {
-
                     if (mb_strtoupper($this->captchaCode) != mb_strtoupper($captchaArr['code'])) {
-                        $this->errMsg = '验证码无效:(';
+                        $this->msgErr('验证码无效:(');
                     }
                 }else{
-                    $this->errMsg = '请输入验证码:(';
+                    $this->msgErr('请输入验证码:(');
                 }
                 $captcha = new CaptchaBuilder;
                 $captcha->build();

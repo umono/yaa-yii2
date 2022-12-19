@@ -38,8 +38,9 @@ export default defineComponent({
     methods: {
         async show(val: any) {
             this.isShow = true;
-            this.model = val;
-            // do something...
+            this.model.id = val.id;
+            this.model.username = val.username;
+            this.model.password = null;
         },
         async submitFunc() {
             this.loading = true;

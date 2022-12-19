@@ -1,5 +1,6 @@
 <?php
 
+    use app\modules\backend\api\helpers\MenuDataHelper;
     use yii\db\Migration;
 
     /**
@@ -35,9 +36,9 @@
                 'avatar'               => $this->string()->defaultValue('')->comment('头像'),
                 'adminGroupId'         => $this->integer()->defaultValue(0)->comment('管理组ID'),
                 'status'               => $this->integer()->notNull()->defaultValue(10)->comment('状态'),
-                'created_at'           => $this->dateTime()->notNull(),
                 'created_id'           => $this->integer()->notNull()->defaultValue(0)->comment('创建用户'),
-                'updated_at'           => $this->dateTime()->notNull(),
+                'created_at'    => $this->dateTime()->notNull()->comment('创建时间'),
+                'updated_at'    => $this->dateTime()->notNull()->comment('更新时间'),
                 'updated_id'           => $this->integer()->notNull()->defaultValue(0)->comment('修改用户'),
                 'is_del'               => $this->boolean()->defaultValue(false)->comment('是否删除'),
                 'is_hidden'            => $this->boolean()->defaultValue(false)->comment('是否隐藏'),
@@ -121,6 +122,13 @@
                         date('Y-m-d H:i:s'),
                     ],
                 ]);
+
+            // 导入菜单数据
+            $this->batchInsert(
+                $this->adminMenuTableName,
+                MenuDataHelper::getColumnArr(),
+                MenuDataHelper::backAll()
+            );
         }
 
         /**
