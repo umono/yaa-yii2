@@ -4,7 +4,7 @@
  一个基于Vue3、Yii2的干净美观的后台框架，可快速助你CURD开发。
 
 <p align="center">
-  <a href="http://yaa.speaks.life/">演示</a> •
+  <a href="http://yaa.speaks.life/admin">演示</a> •
   <a href="http://yaa.docs.speaks.life/">文档</a>
 </p>
 </div>
@@ -19,13 +19,22 @@
 <img src="https://crustipfs.art/ipfs/QmbMc2ydBWRthviTMNfa5McBhjotDuHgHzpUKdT19kFt6E?filename=1671439154772.jpg" width="30%"/>
 </div>
 
-
-
 # 环境要求
 
  - PHP >= 7.3
  - Composer >= 2
  - Node.js >= 14
+
+ ## PHP 启用扩展
+ - fileinfo
+ - imagemagick
+ - exif
+
+## 演示地址
+- [https://yaa.speaks.life/admin](https://yaa.speaks.life/admin)
+- 账号：admin 
+- 密码：123456
+
 
 # ✨ 特性
 
