@@ -21,5 +21,5 @@ app.mixin(commonMixin);
 app.use(store)
     .use(AclChecker, store)
     .use(router)
-    .mount('#app')
+    .mount('#app');
 
