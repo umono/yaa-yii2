@@ -51,6 +51,7 @@
                                 <p>⛏️ <n-button strong tertiary type="success" size="small" @click="item.child.push({})">
                                         添加权限</n-button>
                                 </p>
+                                <p class="text-gray-400">每个实例模型对应都会有：***/delete、***/export-select、***/export-all 方法，分别为删除、导出所选、导出全部，有需要管理则可以添加。</p>
                                 <n-table :single-line="false">
                                     <thead>
                                         <tr class="text-stone-400">

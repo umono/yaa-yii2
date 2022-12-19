@@ -105,6 +105,7 @@ export default defineComponent({
         const reload: any = inject("reload")
         const store = useStore();
 
+        let loading: any = ref(false)
         let toUrl: any = ref('');
         let toModel: any = ref({});
         let showModal: any = ref(false);
@@ -118,6 +119,7 @@ export default defineComponent({
 
         watch(() => props.showModal, (val: boolean) => {
             showModal.value = val;
+            loading.value = false;
         });
 
         watch(() => props.selectRowArr, (arr: any) => {
@@ -190,11 +192,11 @@ export default defineComponent({
             })
         });
         return {
+            loading,
             name,
             toUrl,
             toModel,
             showModal,
-            loading: ref(false),
             dragOptions,
             dragData,
             selectColumnArr,

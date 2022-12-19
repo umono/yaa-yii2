@@ -4,12 +4,13 @@
 
     use app\modules\backend\api\Controller;
     use app\modules\backend\api\helpers\DeleteHelper;
+    use app\modules\backend\api\helpers\ExportDeleteHelper;
 
     class DeleteController extends Controller
     {
         public function actionSelect()
         {
-            DeleteHelper::go($this->param);
+            ExportDeleteHelper::can(ExportDeleteHelper::DELETE,$this->param);
             return $this->success(SUCCESS);
         }
     }
