@@ -7,7 +7,6 @@
   "autoload": {
     "psr-4": {
       "app\\": "src",
-      "umono\\multiple\\": "extend/yii2-multiple/src"
     }
   },
   "authors": [
