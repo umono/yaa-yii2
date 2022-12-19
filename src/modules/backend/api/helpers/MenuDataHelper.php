@@ -33,7 +33,7 @@
                 [5, '员工', 1, '员工的数据页面', 'admin/index', 2, 1, null, 1, $time, $time],
                 [6, '部门', 1, '部门的数据页面', 'admin-group/index', 2, 2, null, 1, $time, $time],
                 [7, '操作记录', 1, '后台操作的一些记录', 'admin-log/index', 2, 3, null, 1, $time, $time],
-                
+
                 [8, '菜单列表', 1, '菜单的数据页面', 'menu/index', 3, 1, null, 1, $time, $time],
 
 
