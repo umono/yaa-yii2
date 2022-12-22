@@ -56,8 +56,6 @@ class Request {
                 config.headers['X-Access-Token'] = accessToken
             }
 
-            config.headers['admin-campus-id'] = window.localStorage.getItem('admin_campus_id')
-
             return config
         })
 
