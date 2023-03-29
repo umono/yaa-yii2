@@ -10,3 +10,19 @@ $border: 1px solid rgba(255, 255, 255, 0.09);
 $fontSize: 15px;
 
 $primaryColor: #0057ff;
+
+
+.btn{
+    transition:  all 300ms;
+    font-weight: 700 !important;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15), 0px 2px 5px rgba(0, 0, 0, 0.05), 0px 8px 40px rgba(0, 0, 0, 0.04);
+}
+
+button:focus,.btn:focus{
+    transition:  all 300ms;
+    transform: translateY(0px);
+}
+button:active,.btn:active{
+    transition:  all 300ms;
+    transform: translateY(3px);
+}

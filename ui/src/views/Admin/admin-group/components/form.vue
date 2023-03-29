@@ -1,74 +1,75 @@
 <template>
     <n-drawer v-model:show="isShow" width="68%" placement="right" :auto-focus="false">
         <n-drawer-content title="">
-            <n-card :bordered="false">
-                <n-form label-width="auto">
-                    <n-form-item label="名称" show-require-mark class="w-1/3">
-                        <n-input v-model:value="model.name" placeholder="请输入部门名称" />
-                    </n-form-item>
-                    <n-form-item label="权限" show-require-mark>
-                        <n-card>
-                            <n-collapse arrow-placement="right" class="menu-rule-auth-box">
-                                <n-collapse-item :name="'menu_' + i" v-for="(item, i) in menuRole" :key="'menu_' + i">
-                                    <template #header>
-                                        <n-button quaternary class="m-btn" @click.stop>
-                                            <n-checkbox @update:checked="updateAllSelect($event, i)"
-                                                v-model:checked="item.selectAll">
-                                            </n-checkbox>
+            <n-spin :show="loading">
+                <n-card :bordered="false">
+                    <n-form label-width="auto">
+                        <n-form-item label="名称" show-require-mark class="w-1/3">
+                            <n-input v-model:value="model.name" placeholder="请输入部门名称" />
+                        </n-form-item>
+                        <n-form-item label="权限" show-require-mark>
+                            <n-card>
+                                <n-collapse arrow-placement="right" class="menu-rule-auth-box">
+                                    <n-collapse-item :name="'menu_' + i" v-for="(item, i) in menuRole"
+                                        :key="'menu_' + i">
+                                        <template #header>
+                                            <n-button quaternary class="m-btn" @click.stop>
+                                                <n-checkbox @update:checked="updateAllSelect($event, i)"
+                                                    v-model:checked="item.selectAll">
+                                                </n-checkbox>
 
-                                            <div class="label">
-                                                {{ item.name }}
-                                                <span
-                                                    :class="item.sumRole != 0 && item.own == item.sumRole ? 'bg-green-500 text-white' : 'bg-stone-100'">
-                                                    {{ item.own }}/{{ item.sumRole }}
-                                                </span>
-                                            </div>
-
-                                        </n-button>
-                                    </template>
-
-                                    <n-grid cols="2 m:3 l:4" x-gap="12" :y-gap="12" responsive="screen">
-                                        <n-grid-item v-for="(_page, _i) in item.child" :key="'page_' + _i">
-                                            <n-card>
-                                                <div class="text-sm text-stone-400 mb-1">菜单</div>
-                                                <n-checkbox class="text-base font-bold" v-model:checked="_page.checked"
-                                                    @update:checked="upArrSelect">
-                                                    {{ _page.name }}</n-checkbox>
-                                                <div class="text-sm text-stone-400 mt-2">权限</div>
-                                                <div class="flex h-10 items-center font-bold"
-                                                    v-for="(child, i) in _page.child">
-                                                    <n-checkbox v-model:checked="child.checked"
-                                                        @update:checked="upArrSelect">
-                                                        {{ child.name }}
-                                                    </n-checkbox>
-                                                    <n-tooltip trigger="click">
-                                                        <template #trigger>
-                                                            <n-button quaternary circle class="text-xl">
-                                                                <n-icon>
-                                                                    <Info16Regular />
-                                                                </n-icon>
-                                                            </n-button>
-                                                        </template>
-                                                        {{ child.typeDes }}
-                                                    </n-tooltip>
+                                                <div class="label">
+                                                    {{ item.name }}
+                                                    <span
+                                                        :class="item.sumRole != 0 && item.own == item.sumRole ? 'bg-green-500 text-white' : 'bg-stone-100'">
+                                                        {{ item.own }}/{{ item.sumRole }}
+                                                    </span>
                                                 </div>
-                                            </n-card>
-                                        </n-grid-item>
-                                    </n-grid>
-                                </n-collapse-item>
-                            </n-collapse>
-                        </n-card>
-                    </n-form-item>
-                </n-form>
 
-                <template #footer v-if="isEdit">
-                    <n-space justify="end">
-                        <n-button type="default" @click="isShow = false" strong secondary>取消</n-button>
-                        <n-button type="primary" @click="submitFunc" :loading="loading">保存</n-button>
-                    </n-space>
-                </template>
-            </n-card>
+                                            </n-button>
+                                        </template>
 
+                                        <n-grid cols="2 m:3 l:4" x-gap="12" :y-gap="12" responsive="screen">
+                                            <n-grid-item v-for="(_page, _i) in item.child" :key="'page_' + _i">
+                                                <n-card>
+                                                    <div class="text-sm text-stone-400 mb-1">菜单</div>
+                                                    <n-checkbox class="text-base font-bold"
+                                                        v-model:checked="_page.checked" @update:checked="upArrSelect">
+                                                        {{ _page.name }}</n-checkbox>
+                                                    <div class="text-sm text-stone-400 mt-2">权限</div>
+                                                    <div class="flex h-10 items-center font-bold"
+                                                        v-for="(child, i) in _page.child">
+                                                        <n-checkbox v-model:checked="child.checked"
+                                                            @update:checked="upArrSelect">
+                                                            {{ child.name }}
+                                                        </n-checkbox>
+                                                        <n-tooltip trigger="click">
+                                                            <template #trigger>
+                                                                <n-button quaternary circle class="text-xl">
+                                                                    <n-icon>
+                                                                        <Info16Regular />
+                                                                    </n-icon>
+                                                                </n-button>
+                                                            </template>
+                                                            {{ child.typeDes }}
+                                                        </n-tooltip>
+                                                    </div>
+                                                </n-card>
+                                            </n-grid-item>
+                                        </n-grid>
+                                    </n-collapse-item>
+                                </n-collapse>
+                            </n-card>
+                        </n-form-item>
+                    </n-form>
+                    <template #footer v-if="isEdit">
+                        <n-space justify="end">
+                            <n-button type="default" @click="isShow = false" strong secondary>取消</n-button>
+                            <n-button type="primary" @click="submitFunc" :loading="loading">保存</n-button>
+                        </n-space>
+                    </template>
+                </n-card>
+            </n-spin>
         </n-drawer-content>
     </n-drawer>
 </template>
@@ -139,15 +140,17 @@ export default defineComponent({
     },
     methods: {
         async show(val: any) {
+            this.loading = true;
             this.isShow = true;
             this.isEdit = val.isEdit;
             this.model.id = val.id;
-
             const { data } = await this.$http.get('admin/api/admin-group/view?id=' + val.id);
             if (data) {
                 this.menuRole = data.menuRole;
                 this.model.name = data.name
             }
+            this.loading = false;
+            await 1;
         },
         async submitFunc() {
             this.loading = true;

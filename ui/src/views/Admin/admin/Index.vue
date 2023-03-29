@@ -2,18 +2,19 @@
     <div>
         <TableData :subHeight="240" :search="search" ref="tables"
             @view="openModal({ id: $event.id, isEdit: false }, 'formModal')"
-            @edit="openModal({ id: $event.id, isEdit: true }, 'formModal')" @freeze="freeze" url="admin/api/admin/index"
+            @edit="openModal({ id: $event.id, isEdit: true }, 'formModal')" 
+            @freeze="freeze" url="admin/api/admin/index"
             @changePassword="changePassword" :handle="_handleBtn">
             <template #btn>
                 <n-button quaternary @click="openModal({ id: null, isEdit: true }, 'formModal')"
                     v-if="$can('admin/create')">
                     创建</n-button>
             </template>
-            <n-input v-model:value="search.phone" filterable placeholder="手机号码" />
-            <n-input v-model:value="search.username" filterable placeholder="用户名" />
+            <n-input v-model:value="search.phone" filterable placeholder="手机号码" clearable/>
+            <n-input v-model:value="search.username" filterable placeholder="用户名" clearable/>
         </TableData>
         <FormModal ref="formModal" />
-        <ChangePasswordModal ref="ChangePasswordModal"/>
+        <ChangePasswordModal ref="ChangePasswordModal" />
     </div>
 </template>
 
@@ -47,6 +48,7 @@ export default defineComponent({
             username: '',
             adminGroupId: null,
         })
+
         const model: AdminModel = reactive({} as AdminModel);
         return {
             search,
@@ -54,33 +56,33 @@ export default defineComponent({
         }
     },
     mounted() {
-        setTimeout(() => {
-            if (this.$can('admin/freeze')) {
-                const freeze = {
-                    type: 'warning',
-                    text: (row: any) => {
-                        if (row.status == 10) {
-                            return '冻结';
-                        } else {
-                            return '解冻';
-                        }
-
-                    },
-                    emitFunction: "freeze",
+        // setTimeout(() => {
+        // if (this.$can('admin/freeze')) {
+        const freeze = {
+            type: 'warning',
+            text: (row: any) => {
+                if (row.status == 10) {
+                    return '冻结';
+                } else {
+                    return '解冻';
                 }
-                this._handleBtn[0].NButtons.push(freeze);
 
-            }
-            if (this.$can('admin/change-password')) {
-                const changePassword = {
-                    type: 'error',
-                    text: '修改密码',
-                    emitFunction: 'changePassword'
-                }
-                this._handleBtn[0].NButtons.push(changePassword);
-                this._handleBtn[0].width = 280;
-            }
-        }, 100);
+            },
+            emitFunction: "freeze",
+        }
+        this._handleBtn[0].NButtons.push(freeze);
+
+        // }
+        // if (this.$can('admin/change-password')) {
+        const changePassword = {
+            type: 'error',
+            text: '修改密码',
+            emitFunction: 'changePassword'
+        }
+        this._handleBtn[0].NButtons.push(changePassword);
+        this._handleBtn[0].width = 280;
+        // }
+        // }, 800);
     },
     methods: {
         async freeze(row: any) {
@@ -91,7 +93,7 @@ export default defineComponent({
             }
         },
         changePassword(row: any) {
-            this.openModal(row,'ChangePasswordModal')
+            this.openModal(row, 'ChangePasswordModal')
         }
     }
 })

@@ -1,15 +1,14 @@
 <template>
     <TableData :subHeight="240" :search="search" ref="tables"
         @view="openModal({ id: $event.id, isEdit: false }, 'formModal')"
-        @edit="openModal({ id: $event.id, isEdit: true }, 'formModal')" 
-        :scrollX="1800" url="admin/api/menu/index"
+        @edit="openModal({ id: $event.id, isEdit: true }, 'formModal')" :scrollX="1800" url="admin/api/template/index"
         :handle="_handleBtn">
 
         <template #btn>
-            <n-button quaternary @click="openModal({ id: null }, 'formModal')">创建</n-button>
+            <n-button quaternary @click="openModal({ id: null, isEdit: true }, 'formModal')">创建</n-button>
         </template>
 
-        <n-input v-model:value="search.name" filterable placeholder="模板名称" />
+        <n-input v-model:value="search.name" filterable placeholder="模板名称" clearable/>
 
     </TableData>
     <FormModal ref="formModal" />
@@ -37,6 +36,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

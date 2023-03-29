@@ -21,8 +21,8 @@
 
         </div>
         <n-image-group>
-            <n-data-table virtual-scroll :max-height="(screenHeight - subHeight)" :bordered="bordered"
-                ref="tableRef" :loading="loading" remote :columns="columns" :data="lists" :row-key="rowKey"
+            <n-data-table virtual-scroll :max-height="(screenHeight - subHeight)" :bordered="bordered" ref="tableRef"
+                :loading="loading" remote :columns="columns" :data="lists" :row-key="rowKey"
                 :scroll-x="180 * columns.length" :pagination="pagination" v-model:checked-row-keys="selectArrayRows"
                 @update:sorter="handleSorterChange" />
         </n-image-group>
@@ -39,7 +39,7 @@ import { Icon } from '@vicons/utils';
 import { Filter24Filled, Search24Filled } from '@vicons/fluent';
 import TablePop from "./TablePop.vue"
 import cryptojs from "@/utils/cryptojs";
-import { isEqual } from '@/plugins/lodash';
+import { debounce, isEqual } from '@/plugins/lodash';
 // type customButton = {
 //     size: string,
 //     type: string,
@@ -169,15 +169,24 @@ export default defineComponent({
             loadingRef.value = false;
         }
 
-        onMounted(goToData);
+        onMounted(()=>{
+            goToData();
+        });
 
         // 监听页面页码、数量
         watch([
             () => pagination.page,
             () => pagination.pageSize,
-            () => search
         ], goToData, { deep: true });
 
+        const lazySearch = debounce(() => {
+            goToData();
+        }, 1000)
+        // watch(() => search, (n) => {
+        //     console.log("search ??",n)
+        //     lazySearch()
+
+        // }, { deep: true, immediate: true })
 
         let screenHeight = ref(window.innerHeight - 75);
 

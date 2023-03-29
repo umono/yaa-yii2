@@ -3,7 +3,6 @@
         <div class="text-xl my-7">
             👏 你好
         </div>
-
         <n-grid x-gap="16" :cols="24">
             <n-gi :span="15">
                 <n-space>
@@ -147,8 +146,6 @@
                 </n-card>
             </n-gi>
         </n-grid>
-
-
     </div>
 </template>
 

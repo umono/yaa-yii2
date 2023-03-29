@@ -1,5 +1,4 @@
 <template>
-    <div>
     <TableData :subHeight="240" :search="search" ref="tables"
         @view="openModal({ id: $event.id, isEdit: false }, 'formModal')"
         @edit="openModal({ id: $event.id, isEdit: true }, 'formModal')" 
@@ -10,11 +9,10 @@
             <n-button quaternary @click="openModal({ id: null, isEdit: true }, 'formModal')">创建</n-button>
         </template>
 
-        <n-input v-model:value="search.name" filterable placeholder="菜单名称" />
+        <n-input v-model:value="search.name" filterable placeholder="菜单名称" clearable/>
 
     </TableData>
     <FormModal ref="formModal" />
-</div>
 </template>
 
 <script lang="ts">

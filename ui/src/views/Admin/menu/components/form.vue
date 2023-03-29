@@ -1,7 +1,8 @@
 <template>
     <n-drawer v-model:show="isShow" width="58%" placement="right" :auto-focus="false">
         <n-drawer-content>
-            <n-card :bordered="false">
+            <n-spin :show="loading">
+                <n-card :bordered="false">
                     <n-card title="菜单" class="">
                         <n-space>
                             <div>
@@ -16,7 +17,8 @@
                                 <span class="text-stone-400">图标名称</span>
                                 <n-input v-model:value="model.iconName" placeholder="Home" />
                                 <div class="text-stone-400 p-3 pl-0">
-                                    查阅：<a href="https://www.xicons.org/#/" target="_blank" class="ext-stone-400">xicons</a>
+                                    查阅：<a href="https://www.xicons.org/#/" target="_blank"
+                                        class="ext-stone-400">xicons</a>
                                 </div>
                             </div>
                             <div>
@@ -48,10 +50,12 @@
                                     </n-space>
                                 </div>
 
-                                <p>⛏️ <n-button strong tertiary type="success" size="small" @click="item.child.push({})">
+                                <p>⛏️ <n-button strong tertiary type="success" size="small"
+                                        @click="item.child.push({})">
                                         添加权限</n-button>
                                 </p>
-                                <p class="text-gray-400">每个实例模型对应都会有：***/delete、***/export-select、***/export-all 方法，分别为删除、导出所选、导出全部，有需要管理则可以添加。</p>
+                                <p class="text-gray-400">每个实例模型对应都会有：***/delete、***/export-select、***/export-all
+                                    方法，分别为删除、导出所选、导出全部，有需要管理则可以添加。</p>
                                 <n-table :single-line="false">
                                     <thead>
                                         <tr class="text-stone-400">
@@ -87,11 +91,12 @@
                         </n-tabs>
                     </n-card>
 
-                <n-space class="mt-8" justify="end" v-if="isEdit">
-                    <n-button type="default" @click="isShow = false" strong secondary>取消</n-button>
-                    <n-button type="primary" @click="submitFunc" :loading="loading">保存</n-button>
-                </n-space>
-            </n-card>
+                    <n-space class="mt-8" justify="end" v-if="isEdit">
+                        <n-button type="default" @click="isShow = false" strong secondary>取消</n-button>
+                        <n-button type="primary" @click="submitFunc" :loading="loading">保存</n-button>
+                    </n-space>
+                </n-card>
+            </n-spin>
         </n-drawer-content>
     </n-drawer>
 </template>
@@ -115,8 +120,11 @@ export default defineComponent({
     },
     methods: {
         async show(val: any) {
+            this.deleteMenuIds = [];
+            this.deletePowerIds = [];
             this.isShow = true;
             this.isEdit = val.isEdit;
+            this.loading = true;
             if (val.id) {
                 this.model.id = val.id;
                 // do something...
@@ -127,6 +135,7 @@ export default defineComponent({
             } else {
                 this.model = { child: [] };
             }
+            this.loading = false;
 
         },
         async submitFunc() {

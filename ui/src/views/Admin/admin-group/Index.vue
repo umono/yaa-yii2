@@ -8,7 +8,7 @@
             <template #btn>
                 <n-button quaternary @click="openModal({ id: null,isEdit:true}, 'formModal')">创建</n-button>
             </template>
-            <n-input v-model:value="search.name" filterable placeholder="部门名称" />
+            <n-input v-model:value="search.name" filterable placeholder="部门名称" clearable/>
 
         </TableData>
         <FormModal ref="formModal" />
